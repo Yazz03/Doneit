@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400&display=swap);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Baloo Bhai 2";
+    background: white;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --menu-width: 170px;
+    --collapsed-width: 60px;
+}
+
+aside {
+    padding: 10px;
+    position: fixed;
+    min-height: 100vh;
+    background: #DBEBE8;
+    width: var(--menu-width);
+    color: #404443;
+    transition: .3s;
+    box-shadow: 0px 0px 15px 0px #00000073;
+    z-index: 1;
+}
+
+.collapsed aside {
+    width: var(--collapsed-width);
+}
+
+.menu-btn {
+    color: #404443;
+    position: absolute;
+    right: -25px;
+    top: 20px;
+    padding: 8px;
+    border: none;
+    font-size: 15px;
+    aspect-ratio: 1;
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+    box-shadow: 1px 0px 1px 0px #1a1a1a;
+    background: #DBEBE8;
+    transition: right 0.3s;
+}
+
+.collapsed .menu-btn {
+    right: -10px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(61, 59, 59);
+}
+
+.brand-name {
+    font-size: 20px;
+    transition: .3s;
+}
+
+.collapsed .brand-name {
+    width: 0;
+    visibility: hidden;
+    transition-delay: .3s;
+}
+
+.menu-items {
+    margin-top: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-items a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: background 0.3s;
+}
+
+.menu-items a:hover {
+    color: white;
+    background: #404443;
+}
+
+.icon {
+    font-size: 25px;
+}
+
+.item-name {
+    transition: .3s;
+}
+
+.collapsed .item-name {
+    width: 0;
+    visibility: hidden;
+    transition-delay: .3s;
+}
+
+main {
+    position: relative;
+    left: var(--menu-width);
+    width: calc(100% - var(--menu-width));
+    transition: .3s;
+    padding: 20px;
+}
+
+.collapsed main {
+    left: var(--collapsed-width);
+    width: calc(100% - var(--collapsed-width));
+}
+
+.main-page p {
+    max-width: 600px;
+    margin: auto;
+    font-size: large;
+    margin-left: 800px;
+}
+
+.main-page img {
+    max-width: 400px;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: -230px;
+    margin-left: 300px;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.information1 {
+    text-align: center;
+}
+
+.information1 p {
+    font-family: "Poppins", sans-serif;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #DBEBE8;
+    border-radius: 50px;
+    font-size: large;
+    padding: 20px;
+    display: inline-block;
+}
+
+.information1 .feedback {
+    font-family: "Poppins", sans-serif;
+    font-size: large;
+    background: #DBEBE8;
+    border-radius: 30px;
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+    display: block;
+    margin: 10px auto;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --menu-width: 120px;
+    }
+    aside {
+        width: var(--menu-width);
+    }
+    .collapsed aside {
+        width: var(--collapsed-width);
+    }
+    main {
+        left: var(--menu-width);
+        width: calc(100% - var(--menu-width));
+    }
+    .collapsed main {
+        left: var(--collapsed-width);
+        width: calc(100% - var(--collapsed-width));
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    font-size: 50px;
+}
